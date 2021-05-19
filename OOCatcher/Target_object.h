@@ -3,14 +3,14 @@
 class Target_object
 {
 public:
-	Target_object(point top_left);
+	Target_object(point top_left, double width, double height);
 	double get_topX();
 	double get_topY();
 	double get_width();
 	double get_height();
 	double get_area();
 private:
-	const point top_left;
-	const point bottom_right;
+	point top_left;
+	point bottom_right;
 };
 
