@@ -7,8 +7,7 @@ body_parts::Side arm::get_side()
 
 void arm::move(double deg, double step)
 {
+	this->rotate(deg);
 }
 
-void arm::checkConnectivity(line_segment* torso)
-{
-}
+

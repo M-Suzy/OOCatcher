@@ -1,2 +1,77 @@
-﻿  OOCatcher.cpp
-  OOCatcher.vcxproj -> C:\Users\melko\source\repos\OOCatcher\x64\Debug\OOCatcher.exe
+﻿  arm.cpp
+  Drawer.cpp
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(38,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(6,114): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(6,80): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(6,54): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(6,38): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(16,51): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(16,33): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(21,114): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(21,61): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+  finger.cpp
+  foot.cpp
+  forearm.cpp
+  Human.cpp
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(38,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,point,point,double&,body_parts::Side>(_Ty &,point &&,point &&,double &,body_parts::Side &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=forearm
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+          with
+          [
+              _Ty=forearm
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+          with
+          [
+              _Ty=forearm
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(19): message : see reference to function template instantiation 'std::shared_ptr<forearm> std::make_shared<forearm,point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+  leg.cpp
+  line_segment.cpp
+  OOCatcher.cpp
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(38,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  point.cpp
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\point.cpp(28,11): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\point.cpp(33,11): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Target_object.cpp
+  torso.cpp
+  Generating Code...
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(62): warning C4715: 'Human::grab': not all control paths return a value
+Human.obj : error LNK2005: "bool __cdecl hasOverlap(double,class point,class point,double,double)" (?hasOverlap@@YA_NNVpoint@@0NN@Z) already defined in Drawer.obj
+Human.obj : error LNK2005: "int __cdecl min_steps(double,double,double,double)" (?min_steps@@YAHNNNN@Z) already defined in Drawer.obj
+OOCatcher.obj : error LNK2005: "bool __cdecl hasOverlap(double,class point,class point,double,double)" (?hasOverlap@@YA_NNVpoint@@0NN@Z) already defined in Drawer.obj
+OOCatcher.obj : error LNK2005: "int __cdecl min_steps(double,double,double,double)" (?min_steps@@YAHNNNN@Z) already defined in Drawer.obj
+C:\Users\melko\source\repos\OOCatcher\x64\Debug\OOCatcher.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -1,48 +1,31 @@
 #pragma once
-#include "point.h"
 #include <memory>
-class line_segment:public point
+#include "point.h"
+
+class line_segment
 {
 public:
-	line_segment(point& fresh_start, point& fresh_end);
+	line_segment(){}
 	line_segment(double start_x, double start_y, double end_x, double end_y);
+	line_segment(point& fresh_start, point& fresh_end);
 	line_segment(const line_segment& that);
-protected:
-	virtual void shift(double dx, double dy);
-	virtual void rotate(double da);
-	std::unique_ptr<point> start_ptr, end_ptr;
-	double get_x() {
-		return start_ptr->get_x();
-	}
-	double get_y() {
-		return start_ptr->get_y();
-	}
-	int int_x() {
-		return start_ptr->int_x();
-	}
-	int int_y() {
-		return start_ptr->int_y();
-	}
-	double end_x() {
-		return end_ptr->get_x();
-	}
-	double end_y(){
-		return end_ptr->get_y();
-	}
-	int int_end_x() {
-		return end_ptr->int_x();
-	}
-	int int_end_y() {
-		return end_ptr->int_y();
-	}
+	std::shared_ptr<point> get_start();
+	std::shared_ptr<point> get_end();
+	double get_x() const;
+	double get_y() const;
+	int int_x() const;
+	int int_y() const;
+	double end_x() const;
+	double end_y() const;
+	int int_end_x() const;
+	int int_end_y() const;
 
-	double length() {
-		return start_ptr->dist(*end_ptr);
-	}
-	double dir() {
-		return start_ptr->dir(*end_ptr);
-	}
-	
+	double length() const;
+	double dir() const;
 
+	void shift(double dx, double dy);
+	void rotate(double da);
+
+private:
+	std::shared_ptr<point> start_ptr, end_ptr;
 };
-

@@ -1,8 +1,8 @@
 // OOCatcher.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc.hpp>
+#include "Drawer.h"
+#include "Human.h"
+#include "Target_object.h"
 #include <iostream>
 
 using namespace cv;
@@ -10,14 +10,10 @@ using namespace std;
 
 int main()
 {
-    Mat canvas = Mat::zeros(1800,1800, CV_8UC3);
-    line(canvas,
-        Point(500, 300),
-        Point(500, 700),
-        Scalar(250, 250, 250),
-        2,
-        LINE_8);
-   // imwrite("Line.png", canvas);
-   // cout << "aaaa";
+	Target_object obj(point(1200, 500), 200, 150);
+	Human h(point(150, 1080 - 450), obj, 1920, 1080);
+	Drawer drawer(1080, 1920, obj);
+	drawer.draw(h);
+	drawer.save("initial.png");
 }
 

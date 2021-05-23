@@ -157,8 +157,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arm.cpp" />
+    <ClCompile Include="Drawer.cpp" />
+    <ClCompile Include="finger.cpp" />
+    <ClCompile Include="foot.cpp" />
     <ClCompile Include="forearm.cpp" />
-    <ClCompile Include="hand.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="leg.cpp" />
     <ClCompile Include="line_segment.cpp" />
@@ -171,8 +173,10 @@
     <ClInclude Include="arm.h" />
     <ClInclude Include="body_parts.h" />
     <ClInclude Include="CareTaker.h" />
+    <ClInclude Include="Drawer.h" />
+    <ClInclude Include="finger.h" />
+    <ClInclude Include="foot.h" />
     <ClInclude Include="forearm.h" />
-    <ClInclude Include="hand.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="leg.h" />
     <ClInclude Include="line_segment.h" />
@@ -180,6 +184,7 @@
     <ClInclude Include="point.h" />
     <ClInclude Include="Target_object.h" />
     <ClInclude Include="torso.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

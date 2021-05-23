@@ -42,7 +42,13 @@
     <ClCompile Include="Target_object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hand.cpp">
+    <ClCompile Include="Drawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="foot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="finger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +86,16 @@
     <ClInclude Include="CareTaker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hand.h">
+    <ClInclude Include="Drawer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="foot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="finger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

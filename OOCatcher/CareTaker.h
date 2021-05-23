@@ -6,40 +6,15 @@
 class CareTaker
 {
 public:
-    CareTaker(Human* const h) : originator(h) {}
-
-    ~CareTaker()
-    {
-        for (unsigned int i = 0; i < history.size(); i++)
-        {
-            delete history.at(i);
-        }
-        history.clear();
+    void add(Memento state) {
+        history.push_back(state);
     }
-
-    void save()
-    {
-        std::cout << "Save state." << std::endl;
-       // history.push_back(originator->createMemento());
+    Memento get(int index) {
+        return history[index];
     }
-
-    void undo()
-    {
-        if (history.empty())
-        {
-            std::cout << "Unable to undo state." << std::endl;
-            return;
-        }
-
-        Memento* m = history.back();
-       // originator->setMemento(m);
-        std::cout << "Undo state." << std::endl;
-
-        history.pop_back();
-        delete m;
+    std::vector<Memento> get_history() {
+        return history;
     }
-
 private:
-    Human* originator;
-    std::vector<Memento*> history;
+    std::vector<Memento> history;
 };
