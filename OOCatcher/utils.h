@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
 
-
-/*struct
+typedef struct
 {
     point torso_start;
     point object_top_left;
@@ -10,9 +9,9 @@
     int canvas_width, canvas_height;
     std::string output_name;
 }input_params;
-*/
 
-bool hasOverlap(double r, point c_center, point top_left, double w, double h)
+
+inline bool hasOverlap(double r, point c_center, point top_left, double w, double h)
 {
 
     double dist_x = abs(c_center.get_x() - top_left.get_x() - w / 2);
@@ -32,7 +31,7 @@ bool hasOverlap(double r, point c_center, point top_left, double w, double h)
     return dx * dx + dy * dy <= (r * r);
 }
 
-int min_steps(double step_size, double rect_centerX, double circ_centerX, double r)
+inline int min_steps(double step_size, double rect_centerX, double circ_centerX, double r)
 {
    
         return (rect_centerX - circ_centerX-r)/step_size+0.5;

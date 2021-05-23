@@ -3,9 +3,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include "Memento.h"
-#include "Target_object.h"
 #include <vector>
+#include "Human.h"
 
 using namespace cv;
 

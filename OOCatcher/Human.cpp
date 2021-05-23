@@ -46,7 +46,7 @@ bool Human::grab()
         exit(EXIT_FAILURE);
     }
     
-    if (!hasOverlap(6.33 * symmetry_unit, point(_torso->end_x(), _torso->end_y()), point(obj.get_topX(), obj.get_topY()), obj.get_width(), obj.get_height()))
+    if (!hasOverlap(6.33 * symmetry_unit, *_torso->get_end(), point(obj.get_topX(), obj.get_topY()), obj.get_width(), obj.get_height()))
     {
         walk(min_steps(2*symmetry_unit, obj.get_centerX(), _torso->end_x(), 6.33 * symmetry_unit));
     }

@@ -12,8 +12,8 @@ int main()
 {
 	Target_object obj(point(1200, 500), 200, 150);
 	Human h(point(150, 1080 - 450), obj, 1920, 1080);
-	Drawer drawer(1080, 1920, obj);
-	drawer.draw(h);
-	drawer.save("initial.png");
+	//Drawer drawer(1080, 1920, obj);
+	//drawer.draw(h);
+	//drawer.save("initial.png");
 }
 
