@@ -1,12 +1,12 @@
-# OOCatcher
+## OOCatcher
 
-## Used Memento design pattern for saving each move
+* Used Memento design pattern for saving each move
 
-## Line segment (line5) and point are from OOADANCES 
+* Line segment (line5) and point are from OOADANCES 
 
-## Overall the human is constructed according to the torso_starting point and canvas size with fixed proportions
+* Overall the human is constructed according to the torso_starting point and canvas size with fixed proportions
 
-## The program estimates whether the object is reachable by human or 
+The program estimates whether the object is reachable by human or 
 not in the current position,  and if it is not,  it calls walk(int step); 
 and then for grabing I estimate the angle between object's center 
 and _torso's end point, which helps to rotate the torso and remaining parts to reach the object. 
