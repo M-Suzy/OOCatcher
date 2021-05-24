@@ -5,19 +5,20 @@
 #include <vector>
 #include "leg.h"
 #include "foot.h"
-#include "finger.h"
 #include "Target_object.h"
 #include "utils.h"
+
 
 
 class Human
 {
 public:
-	Human(point torso_start, Target_object &obj, int canvas_width, int canvas_height);
+	Human(double torso_startX, double torso_startY, Target_object &obj, int canvas_width, int canvas_height);
 	void walk(int step);
 	bool grab();
 	double get_head_radius();
 	std::vector<std::shared_ptr<line_segment>> get_body_points();
+	line_segment* get_fingers_left();
 
 private:
 	friend class Memento;

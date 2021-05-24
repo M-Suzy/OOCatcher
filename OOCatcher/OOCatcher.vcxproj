@@ -158,7 +158,6 @@
   <ItemGroup>
     <ClCompile Include="arm.cpp" />
     <ClCompile Include="Drawer.cpp" />
-    <ClCompile Include="finger.cpp" />
     <ClCompile Include="foot.cpp" />
     <ClCompile Include="forearm.cpp" />
     <ClCompile Include="Human.cpp" />
@@ -174,7 +173,6 @@
     <ClInclude Include="body_parts.h" />
     <ClInclude Include="CareTaker.h" />
     <ClInclude Include="Drawer.h" />
-    <ClInclude Include="finger.h" />
     <ClInclude Include="foot.h" />
     <ClInclude Include="forearm.h" />
     <ClInclude Include="Human.h" />

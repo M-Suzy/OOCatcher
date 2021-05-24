@@ -9,8 +9,6 @@ public:
 	line_segment(double start_x, double start_y, double end_x, double end_y);
 	line_segment(point& fresh_start, point& fresh_end);
 	line_segment(const line_segment& that);
-	std::shared_ptr<point> get_start();
-	std::shared_ptr<point> get_end();
 	double get_x() const;
 	double get_y() const;
 	int int_x() const;
@@ -24,7 +22,9 @@ public:
 	double dir() const;
 
 	void shift(double dx, double dy);
-	void rotate(double da);
+	void rotate_start(double da);
+	void rotate_end(double da);
+	//void rotate(double da);
 
 private:
 	std::shared_ptr<point> start_ptr, end_ptr;

@@ -18,6 +18,14 @@ void Drawer::draw(Human human)
             3,
             LINE_8);
     } 
+    /*for (int i = 0; i < 5; i++) {
+        line(canvas,
+            Point(human->int_x(), body[i]->int_y()),
+            Point(body[i]->end_x(), body[i]->end_y()),
+            Scalar(0, 0, 0),
+            3,
+            LINE_8);
+    }*/
     circle(canvas, Point(body[0]->int_x(), body[0]->int_y() - human.get_head_radius()/2), human.get_head_radius()/2, Scalar(0, 0, 0), 4);
 
 }

@@ -1,5 +1,5 @@
 ﻿  Drawer.cpp
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,53): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(6,114): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
@@ -30,33 +30,35 @@ C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(16,33): warning C4244
           [
               _Tp=int
           ]
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(21,114): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(21,61): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(29,114): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(29,61): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=int
           ]
   Human.cpp
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,53): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(59,22): warning C4305: 'initializing': truncation from 'int' to 'bool'
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(72,13): warning C4804: '<': unsafe use of type 'bool' in operation
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,point,point,double&,body_parts::Side>(_Ty &,point &&,point &&,double &,body_parts::Side &&) noexcept(false)' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,double,double,double,double,double&,body_parts::Side>(_Ty &,double &&,double &&,double &&,double &&,double &,body_parts::Side &&) noexcept(false)' being compiled
           with
           [
               _Ty=forearm
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
           with
           [
               _Ty=forearm
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
           with
           [
               _Ty=forearm
           ]
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(19): message : see reference to function template instantiation 'std::shared_ptr<forearm> std::make_shared<forearm,point,point,double&,body_parts::Side>(point &&,point &&,double &,body_parts::Side &&)' being compiled
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(20): message : see reference to function template instantiation 'std::shared_ptr<forearm> std::make_shared<forearm,double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
   OOCatcher.cpp
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,57): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,53): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
   Generating Code...
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(62): warning C4715: 'Human::grab': not all control paths return a value
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(115): warning C4715: 'Human::grab': not all control paths return a value
   OOCatcher.vcxproj -> C:\Users\melko\source\repos\OOCatcher\x64\Debug\OOCatcher.exe

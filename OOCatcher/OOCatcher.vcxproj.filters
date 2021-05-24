@@ -48,9 +48,6 @@
     <ClCompile Include="foot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="finger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">
@@ -90,9 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="foot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="finger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils.h">

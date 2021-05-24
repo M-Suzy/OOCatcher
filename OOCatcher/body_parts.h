@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
-
-class body_parts 
+#
+class body_parts
 {
 public:
 	enum class Side { LEFT, RIGHT };
@@ -11,7 +11,7 @@ public:
 protected:
 	friend class Human;
 	Side side;
-	virtual void move(double deg, double step) = 0;
-	//virtual void update(std::shared_ptr<body_parts> part);
+	virtual void move(double deg, double dx, double dy, bool rot)=0;
+	//virtual void update(body_parts part);
 	
 };

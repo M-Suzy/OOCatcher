@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#include <iostream>
 typedef struct
 {
     point torso_start;
@@ -11,11 +11,11 @@ typedef struct
 }input_params;
 
 
-inline bool hasOverlap(double r, point c_center, point top_left, double w, double h)
+inline bool hasOverlap(double r, double c_centerX, double c_centerY, double top_leftX, double top_leftY, double w, double h)
 {
 
-    double dist_x = abs(c_center.get_x() - top_left.get_x() - w / 2);
-    double dist_y = abs(c_center.get_y() - top_left.get_y() - h / 2);
+    double dist_x = abs(c_centerX - top_leftX - w / 2);
+    double dist_y = abs(c_centerY - top_leftY - h / 2);
 
 
     if ((dist_x > (w / 2 + r)) || (dist_y > (h / 2 + r)))
@@ -33,7 +33,6 @@ inline bool hasOverlap(double r, point c_center, point top_left, double w, doubl
 
 inline int min_steps(double step_size, double rect_centerX, double circ_centerX, double r)
 {
-   
-        return (rect_centerX - circ_centerX-r)/step_size+0.5;
-
+    std::cout << "Min steps to be able to grab the object::" << (int)((rect_centerX - circ_centerX - r) / step_size + 0.5) << std::endl;
+    return (rect_centerX - circ_centerX-r)/step_size+0.5;
 }

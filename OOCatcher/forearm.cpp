@@ -7,16 +7,28 @@ void forearm::init_fingers(point st, int symmetry_unit)
     line_segment f(st, end_pnt);
     double deg = -10;
         for (int i = 0; i < 5; i++) {
-            f.rotate(deg);
+            f.rotate_end(deg);
             fingers[i] = f;
             deg+=5;
         }
 }
 
-void forearm::move(double deg, double step)
+void forearm::move(double deg, double dx, double dy, bool rot)
 {
-    this->rotate(deg);
-    adjust_fingers();
+    if (dx || dy) {
+        this->shift(dx, dy);
+    }
+    if (deg)
+    {
+        if (rot)
+        {
+            this->rotate_start(deg);
+        }
+        else {
+            this->rotate_end(deg);
+        }
+    }
+        adjust_fingers();
 }
 
 void forearm::adjust_fingers()

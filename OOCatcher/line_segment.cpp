@@ -18,15 +18,6 @@ line_segment::line_segment(const line_segment& that)
 	end_ptr = std::make_shared<point>(that.end_x(), that.end_y());
 }
 
-std::shared_ptr<point> line_segment::get_start()
-{
-	return start_ptr;
-}
-
-std::shared_ptr<point> line_segment::get_end()
-{
-	return end_ptr;
-}
 
 double line_segment::get_x() const
 {
@@ -84,9 +75,14 @@ void line_segment::shift(double dx, double dy)
 	end_ptr->shift(dx, dy);
 }
 
-void line_segment::rotate(double da)
+void line_segment::rotate_start(double da)
 {
 	da = da * 3.14 / 180;
 	double a = dir() + da, r = length();
 	end_ptr->shift(start_ptr->get_x() - end_ptr->get_x() + r * cos(a), start_ptr->get_y() - end_ptr->get_y() + r * sin(a));
+}
+void line_segment::rotate_end(double da) {
+	da = da * 3.14 / 180;
+	double a = dir() + da, r = length();
+	start_ptr->shift(end_ptr->get_x() - start_ptr->get_x() + r * cos(a), end_ptr->get_y() - start_ptr->get_y() - r * sin(a));
 }
