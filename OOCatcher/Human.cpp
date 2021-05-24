@@ -46,7 +46,7 @@ Human::Human(double torso_startX, double torso_startY, Target_object& obj, int c
     body_points.push_back(left_foot); 
     history_maker = new Originator();
     history_adder = new CareTaker(history_maker);
-    history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+    history_maker->setState(get_body_points(), get_fingers_left(), get_fingers_right(), symmetry_unit);
     history_adder->save();
 }
 
@@ -68,7 +68,7 @@ void Human::walk(int step)
         left_forearm->move(0, 0, left_arm->end_y() - left_forearm->get_y(), 1);
         right_arm->move(0, 0, _torso->get_y() - right_arm->get_y(), 1);
         right_forearm->move(0, 0, right_arm->end_y() - right_forearm->get_y(), 1);
-        history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+        history_maker->setState(get_body_points(), get_fingers_left(), get_fingers_right(), symmetry_unit);
         history_adder->save();
         if (dir < 0) {
             left_leg->move(-30, 0, 0, 0);
@@ -90,7 +90,7 @@ void Human::walk(int step)
             right_forearm->move(0, right_arm->end_x() - right_forearm->get_x(), right_arm->end_y() - right_forearm->get_y(), 1);
         }
         step--;
-        history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+        history_maker->setState(get_body_points(), get_fingers_left(), get_fingers_right(), symmetry_unit);
         history_adder->save();
     }
 }
@@ -122,17 +122,21 @@ double Human::get_head_radius()
     return symmetry_unit;
 }
 
-std::vector<std::shared_ptr<line_segment>> Human::get_body_points()
+std::vector<line_segment> Human::get_body_points()
 {
-    return body_points;
+    std::vector<line_segment> cp(body_points.size());
+    for (int i = 0; i < cp.size(); i++) {
+        cp[i] = *body_points[i];
+    }
+    return cp;
 }
 
-line_segment* Human::get_fingers_left()
+std::vector<line_segment> Human::get_fingers_left()
 {
     return left_forearm->fingers;
 }
 
-line_segment* Human::get_fingers_right()
+std::vector<line_segment> Human::get_fingers_right()
 {
     return right_forearm->fingers;
 }

@@ -3,13 +3,14 @@
 
 void forearm::init_fingers(point st, int symmetry_unit)
 {
+    fingers.resize(5);
     point end_pnt(st.get_x()+symmetry_unit/3, st.get_y());
     line_segment f(st, end_pnt);
-    double deg = -10;
+    double deg = 90;
         for (int i = 0; i < 5; i++) {
-            f.rotate_end(deg);
+            f.rotate_start(deg);
             fingers[i] = f;
-            deg+=5;
+            deg-=16;
         }
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "body_parts.h"
 #include "line_segment.h"
+#include <vector>
 class forearm :public body_parts, public line_segment
 {
 public:
@@ -16,7 +17,7 @@ public:
     }
 private:
     friend class Human;
-    line_segment fingers[5];
+    std::vector<line_segment> fingers;
     void init_fingers(point st, int symmetry_unit);
     void move(double deg, double dx, double dy, bool rot) override;
     void adjust_fingers();

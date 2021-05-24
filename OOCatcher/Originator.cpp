@@ -1,10 +1,11 @@
 #include "Originator.h"
 
-void Originator::setState(std::vector<std::shared_ptr<line_segment>> body_pnts, line_segment& left_f, line_segment& right_f, double unit)
+void Originator::setState(std::vector<line_segment> body_pnts, std::vector<line_segment> left_f, 
+                           std::vector<line_segment> right_f, double unit)
 {
     body_state = body_pnts;
-    left_fingers = new line_segment(left_f);
-    right_fingers = new line_segment(right_f);
+    left_fingers = left_f;
+    right_fingers = right_f;
     unit_size = unit;
 }
 
@@ -16,19 +17,19 @@ void Originator::setMemento(Memento* const m)
     unit_size = m->get_unit_size();
 }
 
-std::vector<std::shared_ptr<line_segment>> Originator::get_state()
+std::vector<line_segment> Originator::get_state()
 {
     return body_state;
 }
 
-line_segment Originator::get_fingers_left() 
+std::vector<line_segment> Originator::get_fingers_left()
 {
-    return *left_fingers;
+    return left_fingers;
 }
 
-line_segment Originator::get_fingers_right() 
+std::vector<line_segment> Originator::get_fingers_right() 
 {
-    return *right_fingers;
+    return right_fingers;
 }
 
 double Originator::get_unit_size()

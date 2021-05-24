@@ -16,18 +16,18 @@ void Drawer::illustrate_scenario(std::vector<Memento*> history)
 
 void Drawer::draw(Memento human, int num)
 { 
-    std::vector<std::shared_ptr<line_segment>> body = human.get_state();
+    std::vector<line_segment> body = human.get_state();
     for (int i = 0; i < body.size(); i++) {
 
         line(canvas,
-            Point(body[i]->int_x(), body[i]->int_y()),
-            Point(body[i]->end_x(), body[i]->end_y()),
+            Point(body[i].int_x(), body[i].int_y()),
+            Point(body[i].end_x(), body[i].end_y()),
             Scalar(0, 0, 0),
             2.5,
             LINE_8);
     } 
-    line_segment* left_f = human.get_fingers_left();
-    line_segment* right_f = human.get_fingers_right();
+    std::vector<line_segment> left_f = human.get_fingers_left();
+    std::vector<line_segment> right_f = human.get_fingers_right();
 
     for (int i = 0; i < 5; i++) {
         line(canvas,
@@ -43,7 +43,7 @@ void Drawer::draw(Memento human, int num)
             1,
             LINE_8);
     }
-    circle(canvas, Point(body[0]->int_x(), body[0]->int_y() - human.get_unit_size()/2), human.get_unit_size()/2, Scalar(0, 0, 0), 4);
+    circle(canvas, Point(body[0].int_x(), body[0].int_y() - human.get_unit_size()/2), human.get_unit_size()/2, Scalar(0, 0, 0), 4);
     save(std::to_string(num).append(".jpg"));
 }
 

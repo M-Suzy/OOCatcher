@@ -18,9 +18,9 @@ public:
 	void walk(int step);
 	bool grab();
 	double get_head_radius();
-	std::vector<std::shared_ptr<line_segment>> get_body_points();
-	line_segment* get_fingers_left();
-	line_segment* get_fingers_right();
+	std::vector<line_segment> get_body_points();
+	std::vector<line_segment> get_fingers_left();
+	std::vector<line_segment> get_fingers_right();
 	std::vector<Memento*> get_history();
 
 private:
