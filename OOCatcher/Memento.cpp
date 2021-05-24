@@ -17,7 +17,7 @@ std::vector<line_segment> Memento::get_state()
 
 std::vector<line_segment> Memento::get_fingers_left()
 {
-	std::cout<<left_fingers[0].get_x()<<std::endl;
+	std::cout<<left_fingers[4].get_x()<<std::endl;
 	return left_fingers;
 }
 

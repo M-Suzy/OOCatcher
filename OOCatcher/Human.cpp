@@ -15,18 +15,18 @@ Human::Human(double torso_startX, double torso_startY, Target_object& obj, int c
     this->obj = obj;
     _torso = std::make_shared<torso>(torso_startX, torso_startY, torso_startX, canvas_height-4*symmetry_unit);
     left_arm = std::make_shared<arm>(_torso->get_x(), _torso->get_y(), _torso->get_x(), _torso->get_y()+2*symmetry_unit, body_parts::Side::LEFT);
-    left_arm->rotate_start(15);
+    left_arm->move(15, 0, 0, 1);
     
     right_arm = std::make_shared<arm>(_torso->get_x(), _torso->get_y(), _torso->get_x(), _torso->get_y() + 2*symmetry_unit, body_parts::Side::RIGHT);
-    right_arm->rotate_start(-15);
+    right_arm->move(-15, 0, 0, 1);
     
     left_forearm = std::make_shared<forearm>(left_arm->end_x(), left_arm->end_y(),
                                              left_arm->end_x(), left_arm->end_y() + symmetry_unit, symmetry_unit, body_parts::Side::LEFT);
-    left_forearm->rotate_start(10);
+    left_forearm->move(10, 0, 0, 1);
     
     right_forearm = std::make_shared<forearm>(right_arm->end_x(), right_arm->end_y(),
                                              right_arm->end_x(), right_arm->end_y() + symmetry_unit, symmetry_unit, body_parts::Side::RIGHT);
-    right_forearm->rotate_start(-10);
+    right_forearm->move(-10,0, 0, 1);
     
     left_leg = std::make_shared<leg>(_torso->end_x(),_torso->end_y(), _torso->end_x(), canvas_height, body_parts::Side::LEFT);
    
@@ -106,6 +106,7 @@ bool Human::grab()
     {
         walk(min_steps(STEP_SIZE, obj.get_centerX(), _torso->end_x(), 6.33 * symmetry_unit));
     }
+    
     //double angle = _torso->get_start()->dir(obj.get_center());
    // if (obj.get_centerX() < _torso->get_x()) {
    //     left_forearm->move(angle, 0);
