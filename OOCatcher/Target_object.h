@@ -1,4 +1,6 @@
-#pragma once
+#ifndef TARGET_OBJECT_HEADER
+#define TARGET_OBJECT_HEADER
+
 #include "point.h"
 #include <vector>
 class Target_object
@@ -21,3 +23,4 @@ private:
 	point bottom_right;
 };
 
+#endif // !TARGET_OBJECT_HEADER

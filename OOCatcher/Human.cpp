@@ -102,25 +102,58 @@ bool Human::grab()
         exit(EXIT_FAILURE);
     }
     
-    if(!hasOverlap(6.33 * symmetry_unit, _torso->end_x(), _torso->end_y(), obj.get_topX(), obj.get_topY(), obj.get_width(), obj.get_height()))
+    if(!hasOverlap(6*symmetry_unit, _torso->end_x(), _torso->end_y(), obj.get_topX(), obj.get_topY(), obj.get_width(), obj.get_height()))
     {
-        walk(min_steps(STEP_SIZE, obj.get_centerX(), _torso->end_x(), 6.33 * symmetry_unit));
+        walk(min_steps(STEP_SIZE, obj.get_centerX(), _torso->end_x(), 6*symmetry_unit));
     }
     
-    //double angle = _torso->get_start()->dir(obj.get_center());
-   // if (obj.get_centerX() < _torso->get_x()) {
-   //     left_forearm->move(angle, 0);
-   // }
-   // else {
-   //     right_forearm->move(angle, 0);
-   // }
-    
+    double angle = std::atan((_torso->end_y()- obj.get_centerY())/(obj.get_centerX()-_torso->end_x()));
+    //std::cout << angle * 180 / 3.14 << " " << right_forearm->dir()*180/3.14<< std::endl;
+    if (obj.get_centerX() < _torso->get_x()) {
+        _torso->move(90-angle*180/3.14, 0, 0, 0);
+        left_arm->move(0, _torso->get_x() - left_arm->get_x(), _torso->get_y() - left_arm->get_y(), 1);
+        left_forearm->move(0, left_arm->end_x() - left_forearm->get_x(), left_arm->end_y() - left_forearm->get_y(), 1);
+        left_arm->move((right_arm->dir() + angle) * 180 / 3.14, _torso->get_x() - left_arm->get_x(), _torso->get_y() - left_arm->get_y(), 1);
+        left_forearm->move((right_forearm->dir() + angle) * 180 / 3.14, left_arm->end_x() - left_forearm->get_x(), 
+                                    left_arm->end_y() - left_forearm->get_y(), 1);
+        if (hasTouched(get_fingers_left())) {
+            std::cout << "Man found the object!!!!" << std::endl;
+        }
+    }
+    else {
+        _torso->move(-angle * 180 / 3.14, 0, 0, 0);
+        left_arm->move(0, _torso->get_x() - left_arm->get_x(), _torso->get_y() - left_arm->get_y(), 1);
+        left_forearm->move(0, left_arm->end_x() - left_forearm->get_x(), left_arm->end_y() - left_forearm->get_y(), 1);
+        right_arm->move(-(right_arm->dir()+angle) * 180 / 3.14, _torso->get_x() - right_arm->get_x(), _torso->get_y() - right_arm->get_y(), 1);
+        right_forearm->move(-(right_forearm->dir() + angle) * 180 / 3.14, right_arm->end_x() - right_forearm->get_x(), 
+                                right_arm->end_y() - right_forearm->get_y(), 1);
+        if (hasTouched(get_fingers_right()))
+        {
+            std::cout << "Man found the object!!!!" << std::endl;
+        }
+    }
+   // std::cout << _torso->dir() * 180 / 3.14 << std::endl;
+    history_maker->setState(get_body_points(), get_fingers_left(), get_fingers_right(), symmetry_unit);
+    history_adder->save();   
     
 }
 
 double Human::get_head_radius()
 {
     return symmetry_unit;
+}
+
+bool Human::hasTouched(std::vector<line_segment> fingers)
+{
+    int count = 0;
+    for (int i = 0; i < fingers.size(); i++) {
+        if (inRectanle(obj.get_topX(), obj.get_topY(), obj.get_bottomX(), obj.get_bottomY(), fingers[i].end_x(), fingers[i].end_y()))
+        {
+            count++;
+        }
+        if (count >= 3) return 1;
+    }
+    return 0;
 }
 
 std::vector<line_segment> Human::get_body_points()

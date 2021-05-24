@@ -17,9 +17,10 @@ void Drawer::illustrate_scenario(std::vector<Memento*> history)
 void Drawer::draw(Memento human, int num)
 { 
     std::vector<line_segment> body = human.get_state();
+    Mat canvas_cp;
+    canvas.copyTo(canvas_cp);
     for (int i = 0; i < body.size(); i++) {
-
-        line(canvas,
+        line(canvas_cp,
             Point(body[i].int_x(), body[i].int_y()),
             Point(body[i].end_x(), body[i].end_y()),
             Scalar(0, 0, 0),
@@ -30,24 +31,24 @@ void Drawer::draw(Memento human, int num)
     std::vector<line_segment> right_f = human.get_fingers_right();
 
     for (int i = 0; i < 5; i++) {
-        line(canvas,
+        line(canvas_cp,
             Point(left_f[i].int_x(), left_f[i].int_y()),
             Point(left_f[i].end_x(), left_f[i].end_y()),
             Scalar(0, 0, 0),
             1,
             LINE_8);
-        line(canvas,
+        line(canvas_cp,
             Point(right_f[i].int_x(), right_f[i].int_y()),
             Point(right_f[i].end_x(), right_f[i].end_y()),
             Scalar(0, 0, 0),
             1,
             LINE_8);
     }
-    circle(canvas, Point(body[0].int_x(), body[0].int_y() - human.get_unit_size()/2), human.get_unit_size()/2, Scalar(0, 0, 0), 4);
-    save(std::to_string(num).append(".jpg"));
+    circle(canvas_cp, Point(body[0].int_x(), body[0].int_y() - human.get_unit_size()/2), human.get_unit_size()/2, Scalar(0, 0, 0), 4);
+    save(std::to_string(num).append(".jpg"), canvas_cp);
 }
 
-void Drawer::save(std::string name)
+void Drawer::save(std::string name, Mat img)
 {
-    imwrite(name, canvas);
+    imwrite(name, img);
 }

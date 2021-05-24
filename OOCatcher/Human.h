@@ -1,10 +1,11 @@
-#pragma once
+#ifndef HUMAN_HEADER
+#define HUMAN_HEADER
 #include "torso.h"
 #include "arm.h"
 #include "forearm.h"
-#include <vector>
 #include "leg.h"
 #include "foot.h"
+
 #include "Target_object.h"
 #include "utils.h"
 #include "CareTaker.h"
@@ -18,6 +19,7 @@ public:
 	void walk(int step);
 	bool grab();
 	double get_head_radius();
+	bool hasTouched(std::vector<line_segment>);
 	std::vector<line_segment> get_body_points();
 	std::vector<line_segment> get_fingers_left();
 	std::vector<line_segment> get_fingers_right();
@@ -44,4 +46,4 @@ private:
 	
 
 };
-
+#endif

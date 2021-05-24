@@ -1,23 +1,59 @@
-﻿  Human.cpp
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\utils.h(37,53): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(58,22): warning C4305: 'initializing': truncation from 'int' to 'bool'
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(73,13): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,double,double,double,double,double&,body_parts::Side>(_Ty &,double &&,double &&,double &&,double &&,double &,body_parts::Side &&) noexcept(false)' being compiled
+﻿  Drawer.cpp
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(7,114): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
-              _Ty=forearm
+              _Tp=int
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(7,80): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
-              _Ty=forearm
+              _Tp=int
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(7,54): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
-              _Ty=forearm
+              _Tp=int
           ]
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(24): message : see reference to function template instantiation 'std::shared_ptr<forearm> std::make_shared<forearm,double,double,double,double,double&,body_parts::Side>(double &&,double &&,double &&,double &&,double &,body_parts::Side &&)' being compiled
-C:\Users\melko\source\repos\OOCatcher\OOCatcher\Human.cpp(119): warning C4715: 'Human::grab': not all control paths return a value
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(7,38): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(27,13): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(25,49): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(25,32): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(36,53): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(36,34): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(42,55): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(42,35): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(47,111): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\melko\source\repos\OOCatcher\OOCatcher\Drawer.cpp(47,62): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
   OOCatcher.vcxproj -> C:\Users\melko\source\repos\OOCatcher\x64\Debug\OOCatcher.exe
