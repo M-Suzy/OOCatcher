@@ -7,21 +7,23 @@
 #include "foot.h"
 #include "Target_object.h"
 #include "utils.h"
-
-
+#include "CareTaker.h"
 
 class Human
 {
 public:
+	Human(){}
+	~Human();
 	Human(double torso_startX, double torso_startY, Target_object &obj, int canvas_width, int canvas_height);
 	void walk(int step);
 	bool grab();
 	double get_head_radius();
 	std::vector<std::shared_ptr<line_segment>> get_body_points();
 	line_segment* get_fingers_left();
+	line_segment* get_fingers_right();
+	std::vector<Memento*> get_history();
 
 private:
-	friend class Memento;
 	double symmetry_unit;
 	int bound_x;
 	int bound_y;
@@ -35,8 +37,11 @@ private:
 	std::shared_ptr<foot> right_foot;
 	std::shared_ptr<foot> left_foot;
 	Target_object obj;
+	CareTaker* history_adder;
+	Originator* history_maker;
 	std::vector<std::shared_ptr<line_segment>> body_points;
 	bool is_capable();
+	
 
 };
 

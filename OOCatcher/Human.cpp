@@ -1,6 +1,12 @@
 #include "Human.h"
 #include <iostream>
 
+Human::~Human()
+{
+   delete history_adder;
+   delete history_maker;
+}
+
 Human::Human(double torso_startX, double torso_startY, Target_object& obj, int canvas_width, int canvas_height)
 {
     symmetry_unit = (canvas_height - torso_startY)/ 7;
@@ -8,8 +14,6 @@ Human::Human(double torso_startX, double torso_startY, Target_object& obj, int c
     bound_y = canvas_height;
     this->obj = obj;
     _torso = std::make_shared<torso>(torso_startX, torso_startY, torso_startX, canvas_height-4*symmetry_unit);
-    //_torso->rotate_end(-30);
-    
     left_arm = std::make_shared<arm>(_torso->get_x(), _torso->get_y(), _torso->get_x(), _torso->get_y()+2*symmetry_unit, body_parts::Side::LEFT);
     left_arm->rotate_start(15);
     
@@ -30,14 +34,6 @@ Human::Human(double torso_startX, double torso_startY, Target_object& obj, int c
     left_foot = std::make_shared<foot>(left_leg->end_x(), left_leg->end_y(), left_leg->end_x() - symmetry_unit / 2, canvas_height, body_parts::Side::LEFT);
     right_foot = std::make_shared<foot>(right_leg->end_x(), right_leg->end_y(), 
                                         right_leg->end_x()+symmetry_unit/2, canvas_height, body_parts::Side::RIGHT);
-    grab();
-    //_torso->rotate_end(30);
-    //right_arm->rotate_end(60);
-   // right_arm->shift(_torso->get_x() - right_arm->get_x(), _torso->get_y() - right_arm->get_y());
-   // left_arm->rotate_start(30);
-   // left_arm->shift(_torso->get_x() - left_arm->get_x(), _torso->get_y() - left_arm->get_y());
-   // left_forearm->rotate_end(-60);
-    //right_forearm->rotate_end(60);
     
     body_points.push_back(_torso);
     body_points.push_back(left_arm);
@@ -48,7 +44,10 @@ Human::Human(double torso_startX, double torso_startY, Target_object& obj, int c
     body_points.push_back(right_leg);
     body_points.push_back(right_foot);
     body_points.push_back(left_foot); 
-    
+    history_maker = new Originator();
+    history_adder = new CareTaker(history_maker);
+    history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+    history_adder->save();
 }
 
 #define STEP_SIZE 2*symmetry_unit
@@ -69,6 +68,8 @@ void Human::walk(int step)
         left_forearm->move(0, 0, left_arm->end_y() - left_forearm->get_y(), 1);
         right_arm->move(0, 0, _torso->get_y() - right_arm->get_y(), 1);
         right_forearm->move(0, 0, right_arm->end_y() - right_forearm->get_y(), 1);
+        history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+        history_adder->save();
         if (dir < 0) {
             left_leg->move(-30, 0, 0, 0);
             _torso->move(0, left_leg->get_x() - _torso->get_x(), left_leg->get_y() - _torso->end_y(), 0);
@@ -89,6 +90,8 @@ void Human::walk(int step)
             right_forearm->move(0, right_arm->end_x() - right_forearm->get_x(), right_arm->end_y() - right_forearm->get_y(), 1);
         }
         step--;
+        history_maker->setState(body_points, *get_fingers_left(), *get_fingers_right(), symmetry_unit);
+        history_adder->save();
     }
 }
 
@@ -127,6 +130,16 @@ std::vector<std::shared_ptr<line_segment>> Human::get_body_points()
 line_segment* Human::get_fingers_left()
 {
     return left_forearm->fingers;
+}
+
+line_segment* Human::get_fingers_right()
+{
+    return right_forearm->fingers;
+}
+
+std::vector<Memento*> Human::get_history()
+{
+    return history_adder->get_history();
 }
 
 bool Human::is_capable()

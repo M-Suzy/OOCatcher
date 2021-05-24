@@ -1,20 +1,19 @@
-#pragma once
-#include <iostream>
-#include "Human.h"
-#include <vector>
 #include "Memento.h"
+#include "Originator.h"
 class CareTaker
 {
 public:
-    void add(Memento state) {
-        history.push_back(state);
-    }
-    Memento get(int index) {
-        return history[index];
-    }
-    std::vector<Memento> get_history() {
-        return history;
-    }
+    CareTaker(Originator* const o) : originator(o) {}
+
+    ~CareTaker();
+
+    void save();
+    void undo();
+    Memento get_memento(int index);
+    std::vector<Memento*> get_history();
+
 private:
-    std::vector<Memento> history;
+    Originator* originator;
+    std::vector<Memento*> history;
+    
 };

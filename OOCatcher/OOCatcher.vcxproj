@@ -157,13 +157,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arm.cpp" />
+    <ClCompile Include="CareTaker.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="foot.cpp" />
     <ClCompile Include="forearm.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="leg.cpp" />
     <ClCompile Include="line_segment.cpp" />
+    <ClCompile Include="Memento.cpp" />
     <ClCompile Include="OOCatcher.cpp" />
+    <ClCompile Include="Originator.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="Target_object.cpp" />
     <ClCompile Include="torso.cpp" />
@@ -179,6 +182,7 @@
     <ClInclude Include="leg.h" />
     <ClInclude Include="line_segment.h" />
     <ClInclude Include="Memento.h" />
+    <ClInclude Include="Originator.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="Target_object.h" />
     <ClInclude Include="torso.h" />
